@@ -1,14 +1,9 @@
 import React from 'react';
-import * as S from '@styles/auth/Login.styles'; // 스타일 경로
-import Header from '@components/Header'; // Header 컴포넌트 경로 수정
-import LoginForm from '@components/Auth/LoginForm'; // LoginForm 컴포넌트 경로 확인
+import * as S from '@styles/auth/Login.styles';
+import Header from '@components/Header'; 
+import LoginForm from '@components/Auth/LoginForm';
 
 const LoginPage = () => {
-
-  const handleLogin = () => {
-    // 추후 로그인 로직 추가 예정
-  };
-
   return (
     <S.PageContainer>
       <Header />
@@ -21,7 +16,7 @@ const LoginPage = () => {
         로그인
       </S.LoginText>
       <S.ContentContainer>
-        <LoginForm onLogin={handleLogin} /> {/* LoginForm 컴포넌트 사용 */}
+        <LoginForm />
       </S.ContentContainer>
     </S.PageContainer>
   );

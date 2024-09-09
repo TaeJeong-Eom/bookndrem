@@ -21,7 +21,7 @@ const Header = () => {
     <S.HeaderContainer>
       <S.TopSection>
         <S.LeftSection>
-          <S.PageName>북앤드림</S.PageName>
+          <S.PageName onClick={() => navigate('/')}>북앤드림</S.PageName>
           <S.SearchInput type="text" placeholder="도서 검색..." />
         </S.LeftSection>
         <S.IconsContainer>

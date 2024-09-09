@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import * as S from '@styles/auth/Login.styles';
+import * as L from '@styles/auth/Login.styles';
+import * as F from '@styles/auth/Form.styles';
+import * as S from '@styles/auth/Signup.styles';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '@components/firebase';
 import useAuthStore from '@zustands/useAuthStore';
@@ -53,41 +55,43 @@ const LoginForm = () => {
   };
 
   return (
-    <S.Form onSubmit={handleLogin}>
-      <S.InputContainer>
-        <S.InputWrapper>
-          <S.Input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder=" "
-          />
-          <S.InputLabel htmlFor="email">e-mail을 입력해주세요</S.InputLabel>
-        </S.InputWrapper>
-        <S.InputWrapper>
-          <S.Input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder=" "
-          />
-          <S.InputLabel htmlFor="password">비밀번호를 입력해주세요</S.InputLabel>
-        </S.InputWrapper>
-        <S.SignUpPrompt>
-          처음이신가요?{' '}
-          <S.SignUpLink onClick={() => (window.location.href = '/signup')}>
-            회원가입하기
-          </S.SignUpLink>
-        </S.SignUpPrompt>
-      </S.InputContainer>
-      <S.Button type="submit">로그인</S.Button>
-      <S.KakaoButton type="button" onClick={handleKakaoLogin}>
-        <S.KakaoLogoImage src={KakaoLogo} alt="Kakao Logo" />
+    <F.Form onSubmit={handleLogin}>
+      <S.InputWrapper>
+        <F.Input
+          type="email"
+          id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder=" "
+        />
+        <S.InputLabel htmlFor="email">e-mail을 입력해주세요</S.InputLabel>
+      </S.InputWrapper>
+
+      <S.InputWrapper>
+        <F.Input
+          type="password"
+          id="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder=" "
+        />
+        <S.InputLabel htmlFor="password">비밀번호를 입력해주세요</S.InputLabel>
+      </S.InputWrapper>
+
+      <L.SignUpPrompt>
+        처음이신가요?{' '}
+        <L.SignUpLink onClick={() => (window.location.href = '/signup')}>
+          회원가입하기
+        </L.SignUpLink>
+      </L.SignUpPrompt>
+
+      <F.Button type="submit">로그인</F.Button>
+
+      <L.KakaoButton type="button" onClick={handleKakaoLogin}>
+        <L.KakaoLogoImage src={KakaoLogo} alt="Kakao Logo" />
         카카오톡으로 시작하기
-      </S.KakaoButton>
-    </S.Form>
+      </L.KakaoButton>
+    </F.Form>
   );
 };
 
