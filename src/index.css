@@ -24,10 +24,42 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  display: flex;
+  justify-content: center; /* 수평 중앙 정렬 */
+  align-items: flex-start; /* 콘텐츠를 상단에 배치 */
+  padding-top: 10px; /* 상단에 약간의 패딩을 추가 */
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100%;
+  max-width: 1500px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.PageWrapper {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 1200px) {
+  .PageWrapper {
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 800px) {
+  .PageWrapper {
+    max-width: 90%;
+  }
 }
 
 h1 {
