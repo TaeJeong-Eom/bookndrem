@@ -1,6 +1,7 @@
 import React from 'react';
 import * as S from '@styles/auth/Signup.styles'; 
-import * as L from '@styles/auth/Login.styles'; // Login.styles에서 Form 가져옴
+import * as L from '@styles/auth/Login.styles';
+import * as F from '@styles/auth/Form.styles'
 import Header from '@components/Header';
 import SignupForm from '@components/Auth/SignupForm';
 import { Navigate } from 'react-router-dom';
@@ -25,12 +26,10 @@ const SignupPage = () => {
         환영합니다.
       </L.LoginText>
       <S.ContentContainer>
-        <L.Form> {/* Login.styles에서 Form 가져옴 */}
-          <SignupForm /> {/* SignupForm 컴포넌트 사용 */}
-        </L.Form>
-        <S.SignUpText onClick={() => (window.location.href = '/login')}>
-          로그인
-        </S.SignUpText>
+        <F.Form>
+          <SignupForm/>
+        </F.Form>
+
       </S.ContentContainer>
     </S.PageContainer>
   );
